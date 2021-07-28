@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CKEditor 5 – classic editor build – development sample</title>
+	<style>
+		body {
+			max-width: 800px;
+			margin: 20px auto;
+		}
+		div.card-container {
+			font-size: 13px;
+			line-height: normal;
+			display: flex;
+			margin: 16px 0;
+			flex-wrap: wrap;
+		}
+		
+		div.card-container .card {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			padding: 20px;
+			border-radius: 4px;
+		}
+		.card.card-highlight {
+			background: #e9e6fd;
+			width: 100%;
+		}
+		.card.card-highlight p {
+			margin: 0;
+		}
+		.card.do-box {
+			background: #e3fcef;
+			width: 100%;
+		}
+		.card.do-box p {
+			margin: 0;
+		}
+		.card.dont-box {
+			background: #ffebe6;
+			width: 100%;
+		}
+		.card.dont-box p {
+			margin: 0;
+		}
+ 
+	</style>
+</head>
+<body>
+
+<h1>CKEditor 5 – classic editor build – development sample</h1>
+
+<div id="editor">
+	<h2>Sample</h2>
+
+	<p>This is an instance of the <a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic editor build</a>.</p>
+
+	<figure class="image">
+		<img src="../tests/manual/sample.jpg" alt="Autumn fields" />
+	</figure>
+
+	<p>You can use this sample to validate whether your <a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html">custom build</a> works fine.</p>
+</div>
+
+<script src="../build/ckeditor.js"></script>
+<script>
+	ClassicEditor.create( document.querySelector( '#editor' ) )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( error => {
+			console.error( 'There was a problem initializing the editor.', error );
+		} );
+</script>
+
+</body>
+</html>
